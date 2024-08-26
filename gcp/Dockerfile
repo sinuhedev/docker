@@ -1,5 +1,4 @@
 FROM sinuhedev/base:latest
-LABEL maintainer="s@sinuhe.dev"
 
 # install
 RUN curl -sSL https://sdk.cloud.google.com | bash

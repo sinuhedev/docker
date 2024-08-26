@@ -1,5 +1,4 @@
 FROM sinuhedev/base:latest
-LABEL maintainer="s@sinuhe.dev"
 
 # install
 RUN npm i -g s3rver

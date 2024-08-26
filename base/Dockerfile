@@ -1,5 +1,4 @@
 FROM alpine:3.16.2
-LABEL maintainer="s@sinuhe.dev"
 
 # install
 RUN apk update

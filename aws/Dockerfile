@@ -1,5 +1,4 @@
 FROM sinuhedev/base:latest
-LABEL maintainer="s@sinuhe.dev"
 
 ENV GLIBC_VERSION 2.34-r0
 

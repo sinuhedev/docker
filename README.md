@@ -2,15 +2,12 @@
 
 [hub.docker.com/u/sinuhedev](https://hub.docker.com/u/sinuhedev)
 
-## Docker
-
 ```bash
 # login
 docker login
 
 # docker who
 docker system info | grep -E 'Username|Registry'
-
 
 # version
 docker build -t "sinuhedev/aws:vX.X.XX" aws
@@ -65,6 +62,7 @@ aws --profile s3rver s3 mv file  s3://bucket --endpoint-url "http://localhost:45
 # S3 public
 v .docker/s3/cdn/._S3rver_cors.xml
 ```
+
 ```xml
 <CORSConfiguration>
   <CORSRule>
