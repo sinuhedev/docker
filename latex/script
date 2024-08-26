@@ -1,0 +1,33 @@
+#!/bin/bash
+
+cd src
+
+if [ $1 = "clean" ]; then
+
+  find . -name '*.aux' -delete
+
+  rm main.bbl
+  rm main.blg
+  rm main.ilg
+  rm main.ind
+  rm main.lof
+  rm main.log
+  rm main.lot
+  rm main.out
+  rm main.toc
+
+else
+
+  pdflatex  -interaction=nonstopmode main.tex
+  bibtex main.aux
+  makeindex main.aux
+  makeindex main.idx
+  makeindex main.nlo -s nomencl.ist -o main.nls
+  pdflatex -interaction=nonstopmode main.tex
+  makeindex main.nlo -s nomencl.ist -o main.nls
+  pdflatex  -interaction=nonstopmode main.tex
+
+  mv main.pdf ../$1
+
+fi
+
