@@ -8,9 +8,44 @@ docker login
 
 # docker who
 docker system info | grep -E 'Username|Registry'
+```
 
+## util
+
+```bash
+  docker image ls
+  docker volume ls
+  docker network ls
+  docker ps -a
+
+  docker buildx build -t <NAME>:latest .
+  docker buildx build -t <NAME>:latest .
+  docker exec -it <NAME> bash
+  docker run  -it <NAME> bash
+
+  # Stop all containers
+  docker kill $(docker ps -aq)
+
+  # Remove all containers
+  docker rm $(docker ps -aq)
+
+  # Remove all docker images
+  docker rmi $(docker images -q)
+
+  # Remove all docker volumes
+  docker volume rm $(docker volume ls -q)
+
+  # PRUNE
+  docker system prune
+  docker system prune --all
+
+```
+
+## version / tag
+
+```bash
 # version
-docker build -t "sinuhedev/aws:vX.X.XX" aws
+docker buildx build -t "sinuhedev/aws:vX.X.XX" aws
 
 # tag
 docker tag my_image sinuhedev/aws:vX.X.XX
@@ -20,7 +55,7 @@ docker tag my_image sinuhedev/aws:vX.X.XX
 ## base
 
 ```bash
-docker build -t "sinuhedev/base:latest" base/
+docker buildx build -t "sinuhedev/base:latest" base/
 docker push sinuhedev/base
 #
 docker run -it sinuhedev/base
@@ -29,7 +64,7 @@ docker run -it sinuhedev/base
 ## aws
 
 ```bash
-docker build -t "sinuhedev/aws:latest" aws/
+docker buildx build -t "sinuhedev/aws:latest" aws/
 docker push sinuhedev/aws
 #
 docker run -it sinuhedev/aws
@@ -38,7 +73,7 @@ docker run -it sinuhedev/aws
 ## gcp
 
 ```bash
-docker build -t "sinuhedev/gcp:latest" gcp/
+docker buildx build -t "sinuhedev/gcp:latest" gcp/
 docker push sinuhedev/gcp
 #
 docker run -it sinuhedev/gcp
@@ -47,7 +82,7 @@ docker run -it sinuhedev/gcp
 ## s3rver
 
 ```bash
-docker build -t "sinuhedev/s3rver:latest" s3rver/
+docker buildx build -t "sinuhedev/s3rver:latest" s3rver/
 docker push sinuhedev/s3rver
 #
 mkdir .docker/s3/cdn
@@ -75,7 +110,7 @@ v .docker/s3/cdn/._S3rver_cors.xml
 ## htop
 
 ```bash
-docker build -t "sinuhedev/htop:latest" htop/
+docker buildx build -t "sinuhedev/htop:latest" htop/
 docker push sinuhedev/htop
 #
 docker run -it sinuhedev/htop
@@ -84,16 +119,9 @@ docker run -it sinuhedev/htop
 ## latex
 
 ```bash
-docker build -t "sinuhedev/latex:latest" latex/
+docker buildx build -t "sinuhedev/latex:latest" latex/
 docker push sinuhedev/latex
 #
 docker run -v $PWD:/PWD sinuhedev/latex file.pdf
 docker run -v $PWD:/PWD sinuhedev/latex clean
-```
-
-```bash
-apt-get update
-apt search htop
-apt info htop
-apt -y install htop
 ```
