@@ -1,4 +1,5 @@
 FROM sinuhedev/base:latest
+LABEL author="sinuhe.dev@gmail.com"
 
 ENV GLIBC_VERSION 2.34-r0
 

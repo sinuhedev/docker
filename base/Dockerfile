@@ -1,4 +1,5 @@
 FROM alpine:3.16.2
+LABEL author="sinuhe.dev@gmail.com"
 
 # install
 RUN apk update
