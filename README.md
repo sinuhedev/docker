@@ -106,22 +106,3 @@ v .docker/s3/cdn/._S3rver_cors.xml
   </CORSRule>
 </CORSConfiguration>
 ```
-
-## htop
-
-```bash
-docker buildx build -t "sinuhedev/htop:latest" htop/
-docker push sinuhedev/htop
-#
-docker run -it sinuhedev/htop
-```
-
-## latex
-
-```bash
-docker buildx build -t "sinuhedev/latex:latest" latex/
-docker push sinuhedev/latex
-#
-docker run -v $PWD:/PWD sinuhedev/latex file.pdf
-docker run -v $PWD:/PWD sinuhedev/latex clean
-```
